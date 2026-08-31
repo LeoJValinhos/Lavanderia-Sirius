@@ -6,6 +6,10 @@
 }
 body {
   padding-top: 80px;
+  background: linear-gradient(to bottom, #022b9b, #a3b5dd);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 .logo {
   font-size: 1.5rem;
