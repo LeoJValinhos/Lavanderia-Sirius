@@ -8,9 +8,11 @@
 </head>
 <body>
 
+  <!--PARTE DO HEADER (TOPBAR)-->
+
     <header class="navbar" id="navbar">
       <div class="logo">
-        <img class="logoimg" src="Lavanderia_Sirius.png" alt="logo"></div>
+        <img class="logoimg" src="Img/Lavanderia_Sirius.png" alt="logo_Lavanderia_Sirius" title="Logo da Lavanderia Sirius"></div>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Início</a></li>
@@ -21,6 +23,10 @@
       </nav>
     </header>
 
+    <!--FIM HEADER-->
+
+    <!--PARTE MODAL/POP-UP DO CONTATO-->
+
     <div id="contatoOverlay" class="contato-overlay">
       <div class="contato-box">
         <button id="closeContatoBtn" class="close-btn">&times;</button>
@@ -29,12 +35,47 @@
       </div>
     </div>
 
+    <!--FIM MODAL/POP-UP DO CONTATO-->
+
+        <!-- CARROLSEL DE IMAGEM -->
+    <section class="carrossel-container">
+      <div class="carrossel-slides">
+
+        <div class="slide active">
+          <img src="Img/teste_1.jpg" alt="Serviço de Lavanderia 1">
+        </div>
+        <div class="slide">
+          <img src="Img/teste_2.jpg" alt="Serviço de Lavanderia 2">
+        </div>
+        <div class="slide">
+          <img src="Img/teste_3.jpg" alt="Serviço de Lavanderia 3">
+        </div>
+      </div>
+      <!--FIM CARROSEL-->
+
+      <!-- Botões de Navegação -->
+      <button class="seta anterior" id="prevBtn">&#10094;</button>
+      <button class="seta proximo" id="nextBtn">&#10095;</button>
+    </section>
+    <!--FIM BOTOES-->
+
+
+<!--PARTE DO CHAT BOT-->
+
+  <div class="chat-tooltip">
+      <span>Dúvidas? Fale conosco!</span>
+      <button class="close-tooltip" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+
     <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
 <script type="module">
   var myLandbot = new Landbot.Livechat({
     configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3500567-LF1H10AN2X8NJ0CD/index.json',
   });
 </script>
+
+<!--FIM CHAT BOT-->
+
     <script src="index.js"></script>
 </body>
 </html>
