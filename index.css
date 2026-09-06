@@ -91,3 +91,98 @@ body {
 .close-btn:hover {
   color: #000000;
 }
+.chat-tooltip {
+    position: fixed;
+    bottom: 95px;
+    right: 20px; 
+    background-color: #ffffff;
+    color: #333333;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    /* z-index: 999999; Garante que fica na frente de tudo */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: flutuar 3s ease-in-out infinite;
+}
+.chat-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 25px;
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: #ffffff transparent;
+}
+.close-tooltip {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #999;
+    padding: 0;
+    line-height: 1;
+}
+.close-tooltip:hover {
+    color: #333;
+}
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+.carrossel-container {
+    position: relative;
+    max-width: 50%;
+    height: 350px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.carrossel-slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.slide.active {
+    opacity: 1;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.seta:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.anterior { left: 15px; }
+.proximo { right: 15px; }
