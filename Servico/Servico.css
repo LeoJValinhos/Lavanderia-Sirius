@@ -1,0 +1,434 @@
+/* Importando uma fonte cômica / arredondada (Comic Neue / Fredoka do Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  padding-top: 75px;
+  background: linear-gradient(to bottom, #091e6f 0%, #1a3cb0 35%, #597be3 70%, #9cb3f7 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* EFEITO DE ESTRELAS NO BACKGROUND COM MAIS FOCO NO AZUL E PONTINHOS BRANCOS */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(2.5px 2.5px at 25px 35px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 60px 110px, rgba(255,255,255,0.95), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 120px 50px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2.5px 2.5px at 180px 150px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 260px 210px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2.5px 2.5px at 340px 90px, rgba(255,255,255,0.95), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 420px 180px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2.5px 2.5px at 480px 60px, rgba(255,255,255,0.9), rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 450px 280px;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-color: rgba(16, 42, 133, 0.92);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoimg {
+  height: 115px;
+  width: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.logoimg:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #79dbf1;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 15px 30px;
+  gap: 18px;
+}
+
+/* FOOTER UNIFICADO */
+.footer {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  margin-top: auto;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-col h3 {
+  font-size: 1.05rem;
+}
+
+.footer-col a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: #79dbf1;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-img {
+  height: 32px !important;
+  width: 32px !important;
+  object-fit: contain !important;
+  transition: transform 0.2s;
+}
+
+.social-img:hover {
+  transform: scale(1.15);
+}
+
+/* MODAL CONTATO */
+.contato-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.contato-overlay.active {
+  display: flex;
+}
+
+.contato-box {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  color: #333333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #666666;
+}
+
+.close-btn:hover {
+  color: #000000;
+}
+
+/* TOOLTIP DO CHATBOT */
+.chat-tooltip {
+  position: fixed;
+  bottom: 95px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: flutuar 3s ease-in-out infinite;
+  z-index: 9999;
+}
+
+.chat-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 25px;
+  border-width: 8px 8px 0;
+  border-style: solid;
+  border-color: #ffffff transparent;
+}
+
+.close-tooltip {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #999;
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ==========================================
+   CARDS DE SERVIÇOS E FONTE CÔMICA
+   ========================================== */
+
+/* 1. CARD BANNER DE TÍTULO */
+.card-banner {
+  width: 100%;
+  max-width: 800px;
+  background-color: #032174;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.card-banner h1 {
+  font-family: "Freckle Face", Arial, sans-serif, system-ui;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.card-banner .arrow-down {
+  font-size: 2.2rem;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* 2. CARD DE FIGURA E INFORMAÇÕES */
+.card-servico-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.servico-titulo {
+  font-family: "Freckle Face", Arial, sans-serif, system-ui;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #d1e0ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.servico-descricao {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* BLOCO AZUL DA MÁQUINA COM TAGS */
+.card-servico-figura {
+  position: relative;
+  width: 100%;
+  background: rgba(85, 120, 200, 0.75);
+  border-radius: 35px;
+  padding: 35px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 440px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.figura-img {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+}
+
+.info-tag {
+  position: absolute;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Comic Neue', Arial, sans-serif, system-ui;
+  font-size: 0.92rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  z-index: 3;
+  text-align: center;
+  max-width: 180px;
+  line-height: 1.25;
+}
+
+/* POSICIONAMENTO DAS TAGS */
+.tag-topo {
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tag-esquerda-topo {
+  top: 100px;
+  left: 15px;
+}
+
+.tag-esquerda-baixo {
+  bottom: 60px;
+  left: 15px;
+}
+
+.tag-direita {
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+/* MEDIA QUERIES (RESPONSIVIDADE) */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 10px;
+  }
+
+  body {
+    padding-top: 110px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .card-banner h1 {
+    font-size: 2rem;
+  }
+
+  .card-servico-figura {
+    flex-direction: column;
+    padding: 20px 10px;
+    min-height: auto;
+    border-radius: 20px;
+    gap: 15px;
+  }
+
+  .figura-img {
+    max-width: 180px;
+    margin: 10px 0;
+  }
+
+  .info-tag {
+    position: static;
+    transform: none;
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 18px;
+  }
+}

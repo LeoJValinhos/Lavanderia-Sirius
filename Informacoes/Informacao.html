@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Informacao.css">
+  <title>Lavanderia Sirius</title>
+</head>
+<body>
+
+  <!-- EFEITO DE ESTRELAS NO BACKGROUND -->
+  <div class="stars"></div>
+
+  <!-- NAVBAR / HEADER -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="Informacao.html">Informações</a></li>
+        <li><a href="../Servico/Servico.html">Serviços</a></li>
+      </ul>
+
+      <div class="logo">
+        <a href="../index.html">
+          <img class="logoimg" src="../Img/Logo.png" alt="Logo Lavanderia Sirius" title="Logo Lavanderia Sirius">
+        </a>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="../Funcionamento/funcionamento.html">Como Funciona?</a></li>
+        <li><a href="../Localizacao/Localizacao.html">Localização</a></li>
+        <li><a href="#" id="openContatoBtn">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content" id="inicio">
+
+    
+
+  </main>
+
+  <!-- RODAPÉ (FOOTER) -->
+  <footer class="footer">
+    <div class="footer-col">
+      <h3>Redes / Links</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/siriuslavanderia/" target="_blank" aria-label="Instagram">
+          <img class="social-img" src="../Img/insta.png" alt="Instagram">
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=5511914912097" target="_blank" aria-label="WhatsApp">
+          <img class="social-img" src="../Img/zap.png" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Localização</h3>
+      <a href="https://www.google.com/maps/place/Av.+Flamingo,+1563+-+Vila+Nova+Curuca,+S%C3%A3o+Paulo+-+SP" target="_blank">
+        <p>Av. Flamingo, 1563 – São Paulo, SP</p>
+      </a>
+    </div>
+  </footer>
+
+  <!-- MODAL DE CONTATO -->
+  <div id="contatoOverlay" class="contato-overlay">
+    <div class="contato-box">
+      <button id="closeContatoBtn" class="close-btn">&times;</button>
+      <h2>Entre em Contato</h2>
+      <p>Instagram: <a href="https://www.instagram.com/siriuslavanderia/" target="_blank">@lavanderiasirius</a></p> 
+      <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5511914912097" target="_blank">Lavanderia Sirius</a></p>
+    </div>
+  </div>
+
+  <!-- TOOLTIP CHATBOT -->
+  <div class="chat-tooltip">
+    <span>Dúvidas? Fale conosco!</span>
+    <button class="close-tooltip" onclick="this.parentElement.style.display='none'">&times;</button>
+  </div>
+
+  <!-- LANDBOT CHAT -->
+  <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+  <script type="module">
+    var myLandbot = new Landbot.Livechat({
+      configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3500567-LF1H10AN2X8NJ0CD/index.json',
+    });
+  </script>
+
+  <script src="Informacao.js"></script>
+</body>
+</html>
