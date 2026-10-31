@@ -32,13 +32,104 @@
         <li><a href="#" id="openContatoBtn">Contato</a></li>
       </ul>
     </nav>
+       <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
   </header>
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="main-content" id="inicio">
 
-    
+    <!-- 1. CARD BANNER DE TÍTULO -->
+    <section class="card-banner">
+      <h1>Perguntas Frequentes</h1>
+      <div class="arrow-down">&#11015;</div>
+    </section>
 
+    <div class="faq-container">
+      <!-- PERGUNTA 1 -->
+      <details class="faq-item">
+        <summary class="faq-questao">
+          <span class="faq-icon">?</span>
+          <span class="faq-pergunta">Precisa levar sabão e amaciante?</span>
+          <span class="faq-flecha-baixo">&darr;</span>
+        </summary>
+        <div class="faq-resposta">
+          <p></p>
+        </div>
+      </details>
+
+      <!-- PERGUNTA 2 -->
+      <details class="faq-item">
+        <summary class="faq-questao">
+          <span class="faq-icon">?</span>
+          <span class="faq-pergunta">Como posso entrar em contato?</span>
+          <span class="faq-flecha-baixo">&darr;</span>
+        </summary>
+        <div class="faq-resposta">
+          <p></p>
+        </div>
+      </details>
+
+      <!-- PERGUNTA 3 -->
+      <details class="faq-item">
+        <summary class="faq-questao">
+          <span class="faq-icon">?</span>
+          <span class="faq-pergunta">Qual é o nosso horário de funcionamento?</span>
+          <span class="faq-flecha-baixo">&darr;</span>
+        </summary>
+        <div class="faq-resposta">
+          <p></p>
+        </div>
+      </details>
+
+      <!-- PERGUNTA 4 -->
+      <details class="faq-item">
+        <summary class="faq-questao">
+          <span class="faq-icon">?</span>
+          <span class="faq-pergunta">Quais serviços vocês oferecem?</span>
+          <span class="faq-flecha-baixo">&darr;</span>
+        </summary>
+        <div class="faq-resposta">
+          <p></p>
+        </div>
+      </details>
+
+      <!-- PERGUNTA 5 -->
+      <details class="faq-item">
+        <summary class="faq-questao">
+          <span class="faq-icon">?</span>
+          <span class="faq-pergunta">Como posso solicitar um serviço?</span>
+          <span class="faq-flecha-baixo">&darr;</span>
+        </summary>
+        <div class="faq-resposta">
+          <p></p>
+        </div>
+      </details>
+
+      <!-- PERGUNTA 6 -->
+      <details class="faq-item">
+        <summary class="faq-questao">
+          <span class="faq-icon">?</span>
+          <span class="faq-pergunta">Outra pergunta?</span>
+          <span class="faq-flecha-baixo">&darr;</span>
+        </summary>
+        <div class="faq-resposta">
+          <p></p>
+        </div>
+      </details>
+
+      <!-- PERGUNTA 7 -->
+      <details class="faq-item">
+        <summary class="faq-questao">
+          <span class="faq-icon">?</span>
+          <span class="faq-pergunta">Outra pergunta?</span>
+          <span class="faq-flecha-baixo">&darr;</span>
+        </summary>
+        <div class="faq-resposta">
+          <p></p>
+        </div>
+      </details>
+    </div>
+    
   </main>
 
   <!-- RODAPÉ (FOOTER) -->
@@ -88,5 +179,26 @@
   </script>
 
   <script src="Informacao.js"></script>
+
+    <!-- SCRIPT PARA GERENCIAR PERGUNTAS -->
+  <script>
+  const details = document.querySelectorAll(".faq-item");
+
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const isOpen = targetDetail.hasAttribute("open");
+
+      details.forEach((detail) => {
+        detail.removeAttribute("open");
+        });
+
+      if (!isOpen) {
+        targetDetail.setAttribute("open", "");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
